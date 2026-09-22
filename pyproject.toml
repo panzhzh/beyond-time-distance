@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beyond-time-distance"
+version = "0.1.0"
+description = "Forecast-shape dependence calibration for future changes with fixed marginals"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = ["numpy>=1.26,<3", "torch>=2.10,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+btd-fit = "beyond_time_distance.cli:fit_main"
+btd-evaluate = "beyond_time_distance.cli:evaluate_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+markers = ["cuda: numerical contracts requiring a CUDA device"]

@@ -1,0 +1,45 @@
+{
+  "release": "0.1.0",
+  "method": "temperature-consistent forecast-shape calibration",
+  "normalized": "CRPS or 90% interval score divided by max(history IQR, training fifth-positive-percentile floor, 1e-6).",
+  "aggregation": "Equal mean of twelve cell-relative effects, with equal lag means within a cell. Physical scores are compared within each cell before averaging relative effects.",
+  "mean_shifts": "Arithmetic mean of all 47 independently refitted nonzero-shift scores per window; this is a score comparator, not a predictive mixture.",
+  "intervals": {
+    "bootstrap_draws": 100000,
+    "coverage": 0.95,
+    "method": "paired cluster/time-block percentile bootstrap with Bonferroni correction",
+    "families": {
+      "time_and_groups": 144,
+      "mean_shifts": 2,
+      "generic_baselines": 4
+    },
+    "alignment_curve_intervals": "pointwise 95%, descriptive"
+  },
+  "coverage_units": "Percentage points in interval_diagnostics.csv; absolute calibration error is averaged across cells.",
+  "original_metrics": "Original inverse-IQR scores appear only as the explicitly named original_crps/original_is90 sensitivity metrics.",
+  "source_fingerprints": {
+    "geometry_temperature_refit_20260922/summary.json": "12eb987fff45d105898d56a60cb4d71941d458e43ce82f8e5c13713d11d42cdc",
+    "four_group_audit/summary.json": "3ca0e547b39665c479f43a06d716ed359e538866f989f377210625a9989e83c2",
+    "geometry_temperature_alignment_20260922/summary.json": "e8844471e7d4e997ceca54ef66e64f41f4f14e2fa86ad13444fce0abae83693c",
+    "geometry_temperature_refit_20260922/chronos--score_summary.json": "82049ee8ebab1f23d8ed66c782a7166e887cb8ee6a84a37a9bd7002c14d16d9d",
+    "geometry_temperature_refit_20260922/flowstate--score_summary.json": "bb66cdc4a98f3392e3e567206cd11cab333f54b7c802993d4297136847b43951",
+    "geometry_temperature_baselines_20260922/chronos--score_summary.json": "536cfba32d657b211c13fef1227f8fa8eb69e257a9ddb922210d5df8f83811d2",
+    "geometry_temperature_baselines_20260922/flowstate--score_summary.json": "4cf940b2736cd575033a0c7ad13a6da9f1ad13be5acd62018552127b03b80831",
+    "geometry_temperature_baselines_20260922/chronos--mechanism.json": "929612ff9a68bd246a5d4274fe54f619bf6ab6fca13e05aaf8d042fca4e3f87a",
+    "geometry_temperature_baselines_20260922/flowstate--mechanism.json": "770ff53f2d870a6f9e9a21a293b8ec48de585439a09c4bd7c0e0f795024bb00c",
+    "geometry_temperature_baselines_20260922/generic_audit.json": "5003eb2dae0a5512534f42a386bc4b498f8dd1cb827aa1460fcfe4158a6cb577"
+  },
+  "files": {
+    "absolute_baseline_scores.csv": "240d12dfdecbfd9614ccfb631f41eb9a8fb095204f71072d7d703e2a0d463792",
+    "alignment.csv": "c39803ad84d224758c57af49b120eb2f57a09d045e7adcf5b5909afb93d65353",
+    "alignment_cellwise.csv": "bd165887036c873d39e4848f2805723cabc8d23bfa59bcf04b0fdbb446bbf6bb",
+    "alignment_scores.csv": "386e256d3119edd5f7991c594c7928bc128dc1ac6efd49955371b0fa57bbc10f",
+    "cellwise_scores.csv": "dadd8755f81e5dbe3b475f98eb66d12486029b202aab42e2bd364b505738b1be",
+    "datasets.csv": "e49eb017868f8de9b69aa4f6eacf8e919684adbb9ffb476b82c72d567e300382",
+    "generic_comparisons.csv": "ccee660a3fd4b788cef1ab4dcc36bb202a60908d7a71c00afdf4757bc3ca6eb9",
+    "group_comparisons.csv": "3e64a03b64d577047f4f26e55468c56fea555dce232598ee14f5d1eff8cf9139",
+    "interval_diagnostics.csv": "2135779b85560476645328652324b371c0465f04fcb9abfabb33e2e71fb2a4e2",
+    "main.csv": "6e168310f9bfcc81943499ca48a4032bbe21dc4391fae415493a2e74d00255a2",
+    "mechanism_diagnostics.csv": "88ae31a2d1455f1f1244a6116773fba8fb460d7b582cbead651e0c51808214dc"
+  }
+}

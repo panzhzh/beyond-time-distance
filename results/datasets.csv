@@ -1,0 +1,7 @@
+dataset,minutes,history,horizon,train,validation,test,registry,registry_url
+ett1_15min_ot,15,384,48,857,281,289,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
+ett2_15min_ot,15,384,48,863,282,281,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
+jena_weather_10min_temperature,10,576,48,631,203,215,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
+loop_seattle_5min_speed,5,1152,48,2477,784,835,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
+electricity_15min_load,15,384,48,4887,2306,2354,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
+solar_10min_power,10,576,48,2624,864,896,Salesforce/GiftEval,https://huggingface.co/datasets/Salesforce/GiftEval
